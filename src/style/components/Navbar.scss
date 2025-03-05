@@ -1,0 +1,20 @@
+
+/* Navbar */
+.navbar {
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  a img {
+    width: 210px;
+    height: 68px;
+  }
+  
+  .navbar__link {
+    display: flex;
+    gap: 20px;
+    color:#ff6060;
+  
+  }

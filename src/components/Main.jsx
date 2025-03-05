@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import "../components/Main.scss";
+import "../style/index.scss";
 
 function Main() {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch('/data/logements.json')
+    fetch('./Datas/logements.json')
       .then((response) => response.json())
       .then((data) => setLocations(data))
       .catch((error) => console.error('Erreur lors du chargement du fichier JSON:', error));
@@ -23,6 +23,7 @@ function Main() {
           
           {/* Titre de la location */}
           <div className="main__title">{location.title}</div>
+
         </div>
       ))}
     </div>

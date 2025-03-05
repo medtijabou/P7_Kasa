@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar } from "react-icons/fa";
 
-import "../pages/Hogar.scss";
+import "../style/page/Hogar.scss";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import des icônes des flèches
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Hogar() {
   const { id } = useParams();
@@ -25,7 +25,8 @@ function Hogar() {
   };
 
   useEffect(() => {
-    fetch("/data/logements.json")
+    fetch('/Datas/logements.json')
+
       .then((response) => response.json())
       .then((data) => {
         const selectedLocation = data.find((item) => item.id === id);

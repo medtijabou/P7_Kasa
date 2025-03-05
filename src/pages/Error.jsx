@@ -1,5 +1,5 @@
-import Navbar from "../Navbar";
-import "../pages/Error.scss"; 
+import Navbar from "../components/Navbar";
+import "../style/page/Error.scss"; 
 import { Link } from "react-router-dom";
 
 function Error() {

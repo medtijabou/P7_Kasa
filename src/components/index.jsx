@@ -2,9 +2,9 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import Error from "./components/pages/Error";
-import About from "./components/pages/About";
-import Hogar from "./components/pages/Hogar"; // Import du composant de détails
+import Error from "../pages/Error";
+import About from "../pages/About";
+import Hogar from "../pages/Hogar"; // Import du composant de détails
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const router = createBrowserRouter([

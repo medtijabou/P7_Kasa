@@ -1,28 +1,4 @@
-/* Body custom styles */
-body {
-    display: block;
-  }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    a {
-      img {
-        width: 210px;
-        height: 68px;
-      }
-    }
-  
-    &__link {
-      display: flex;
-      gap: 20px;
-      color: #ff6060;
-    }
-  }
-  
+
   /* Error container */
   .error__container {
     display: flex;
@@ -54,4 +30,16 @@ body {
     font-size: 18px;
     margin-top: 4rem;
   }
-  
+  /*responsive*/
+  @media (max-width: 768px) {
+    .error__title {
+      font-size: 144px;
+    }
+    .error__text {
+      font-size: 18px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;  }
+  }

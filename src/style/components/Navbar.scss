@@ -30,11 +30,7 @@ a img {
   border-bottom: #ff6060 2px solid; 
 }
  /* Responsive styles for max-width 768px */
- @media (max-width: 768px) {  .navbar {
-
-  align-items: flex-start;
-}
-
+ @media (max-width: 768px) {  
 .navbar__link a{
  
   gap: 5px;

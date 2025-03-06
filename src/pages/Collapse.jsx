@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "../style/page/Collapse.scss"; // Vérifie que ce fichier est bien importé
+import "../style/index.scss"; // Vérifie que ce fichier est bien importé
 
 const Collapse = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Collapse from "./Collapse"; // Vérifie que le composant est bien importé
-import "../style/page/About.scss";
+
 
 function About() {
   const [collapsesData, setCollapsesData] = useState([]);

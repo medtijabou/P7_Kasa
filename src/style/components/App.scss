@@ -1,15 +1,5 @@
-
-
-
-
-/* Variables */
-$max-width: 1440px;
-$font-family: "Montserrat", sans-serif;
-$font-size: 14px;
-$banner-image: url('src/assets/images/plage.png');
-$primary-color: #ff6060;
-$text-color: black;
-$text-hover-color: $primary-color;
+@use '../variables' as variables;
+@use '../components/responsive';
 
 /* Reset CSS */
 *,
@@ -41,10 +31,9 @@ section {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 a {
-  color: $text-color;
-
+  color: variables.$text-color;
   &:hover {
-    color: $text-hover-color;
+    color: variables.$text-hover-color;
   }
 }
 
@@ -72,45 +61,10 @@ table {
 
 /* Body custom styles */
 body {
-  max-width: $max-width;
+  max-width: variables.$max-width;
   margin: auto;
-  font-family: $font-family;
-  font-size: $font-size;
+  font-family: variables.$font-family;
+  font-size: variables.$font-size;
   display: flex;
   justify-content: center;
-}
-
-
-
-
-/* Media Query for Mobile Responsiveness */
-@media (max-width: 768px) {
-  *{
-    margin: auto;
-  }
-  .navbar {
-    justify-content: center;
-  
-  }
-  .navbar img{
-    width: 150px;
-  }
-  
-  .banner{
-    margin:0 10px 0 10px;
-  }
-  .banner__title{
-    font-size: 24px;
-    padding-left: 10px;
-  height: 110px;
-  
-  }
-.logo_footer img{
-font-size: 30px;
-    
-  }
-  .footer__close {
-    font-size: 16px;
-  }
-  
 }

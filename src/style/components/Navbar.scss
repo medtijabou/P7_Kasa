@@ -1,20 +1,31 @@
-
 /* Navbar */
 .navbar {
- 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  a img {
-    width: 210px;
-    height: 68px;
-  }
-  
-  .navbar__link {
-    display: flex;
-    gap: 20px;
-    color:#ff6060;
-  
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a img {
+  width: 210px;
+  height: 68px;
+}
+
+.navbar__link {
+  display: flex;
+  gap: 20px;
+  color: #ff6060;
+  font-size: 24px;
+}
+
+/* Enlever la bordure et le contour sur les liens */
+.navbar__link a,
+.navbar__link .active {
+  text-decoration: none; /* Enlève la décoration de texte (soulignement) */
+  outline: none; /* Enlève le contour autour des liens */
+}
+
+/* Style du lien actif */
+.navbar__link .active {
+  color: #ff6060; /* Surligne en rouge lorsque l'élément est actif */
+  border-bottom: #ff6060 2px solid; 
+}

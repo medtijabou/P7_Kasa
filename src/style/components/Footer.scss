@@ -1,25 +1,26 @@
-/* Footer */
+@use '../variables' as variables;
+
 .footer_container {
-    height: 20vh;
-    background-color: black;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .logo_footer {
-    width: 122px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10px;
-  }
-  
-  .footer__close {
-    font-family: $font-family;
-    font-weight: 500;
-    font-size: 24px;
-    color: white;
-  }
+  height: 20vh;
+  background-color: black;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_footer {
+  width: 122px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.footer__close {
+  font-family: variables.$font-family;
+  font-weight: 500;
+  font-size: 24px;
+  color: white;
+}

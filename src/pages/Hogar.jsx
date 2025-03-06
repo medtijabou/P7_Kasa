@@ -5,10 +5,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar } from "react-icons/fa";
 
-import "../style/page/Hogar.scss";
+
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import des icônes des flèches
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 
 function Hogar() {
   const { id } = useParams();
@@ -67,18 +68,29 @@ function Hogar() {
   return (
     <div className="hogar__container">
       <Navbar />
-      <Slider {...settings} className="hogar__carousel">
-        {location.pictures.map((pic, index) => (
-          <div key={index}>
-            <img
-              src={pic}
-              alt={`Photo ${index + 1}`}
-              className="hogar__image"
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </Slider>
+      {location.pictures.length > 1 ? (
+  <Slider {...settings} className="hogar__carousel">
+    {location.pictures.map((pic, index) => (
+      <div key={index}>
+        <img
+          src={pic}
+          alt={`Photo ${index + 1}`}
+          className="hogar__image"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </Slider>
+) : (
+  <img
+    src={location.pictures[0]} // Afficher la seule image
+    alt="Photo"
+    className="hogar__image"
+    loading="lazy"
+  />
+)}
+
+
 <div className="hogar__container__header">
       <h1 className="hogar__title">{location.title}</h1>
       <div className="hogar__header">

@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: "/P7_Kasa/", // Ajoute cette ligne
   plugins: [react()],
-  base: '/P7_Kasa/', // Assure-toi que ce chemin correspond au nom de ton repo GitHub
-});
+})

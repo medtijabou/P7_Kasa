@@ -2,87 +2,16 @@
 
 /* Responsive styles for max-width 768px */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .navbar__link a{
-
-    gap: 10px;
-    font-size: 18px;
-  }
-
-  a img {
-    width: 150px;
-    height: 50px;
-  }
-
-
-  .main__container {
-    flex-direction: column;
-  }
-
+ 
   body {
-    font-size: variables.$font-size-mobile;
-    padding: 0 20px;
-  }
-
-  .banner__title {
-    font-size: 36px;
-  }
-
-  .footer__close {
-    font-size: 18px;
-  }
-}
-
-/* Responsive styles for max-width 375px */
-@media (max-width: 375px) {
-  .navbar {
-
-    align-items: flex-start;
-  }
-
-  .navbar__link a{
-   
-    gap: 5px;
-    font-size: 12px;
-  }
-
-  .navbar img {
-    width: 145p;
-    height: 40px;
-  }
-
-  .main__container > * {
-    flex: 1 1 100%;
-    padding: 15px;
-  }
-
-  .main__box img {
-    height: 200px;
-  }
-
-  .main__title {
-    font-size: 14px;
-    bottom: 30px;
-  }
-
-  body {
-    font-size: 12px; /* Ajustez cette valeur selon vos besoins */
+    font-size: 12px; 
     padding: 0 10px;
   }
-
-  .banner__title {
-    font-size: 24px; /* Ajustez cette valeur selon vos besoins */
-  }
-
-  .footer__close {
-    font-size: 14px; /* Ajustez cette valeur selon vos besoins */
-  }
+ 
+  
+  
 
   .about {
-    height: 150px; /* Ajustez cette valeur selon vos besoins */
+    height: 150px; 
   }
 }

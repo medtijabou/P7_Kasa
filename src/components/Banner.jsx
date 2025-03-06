@@ -4,7 +4,7 @@
 function Banner() {
   return (
     <div className='banner'>
-      <h1 className= 'banner__title'>Chez vous, partout et ailleurs</h1>
+      <h1 className= 'banner__title'>Chez vous,<span>partout et ailleurs</span></h1>
        
         
     </div>

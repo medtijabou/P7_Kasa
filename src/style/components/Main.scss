@@ -56,8 +56,28 @@ margin:15px 20px ;
     opacity: 1;
     transform: translateY(0);
   }}
-  @media (max-width: 768px){
-    .main__container{
-      flex-direction: column;
-    }
+  
+ 
+/*responsive for max-width 768px */
+@media (max-width: 768px) {
+  .main__container{
+    flex-direction: column;
+    background: none;
   }
+  
+    .main__container > * {
+      flex: 1 1 100%;
+      padding: 0;
+    }
+  
+    .main__box img {
+      width: 100%;
+      height: 255px;
+   margin-top: 10px;
+  
+    }
+  .main__title{
+    bottom: 20px;
+    font-size: 14px;
+  }
+}

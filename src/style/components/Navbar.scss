@@ -29,3 +29,20 @@ a img {
   color: #ff6060; /* Surligne en rouge lorsque l'élément est actif */
   border-bottom: #ff6060 2px solid; 
 }
+ /* Responsive styles for max-width 768px */
+ @media (max-width: 768px) {  .navbar {
+
+  align-items: flex-start;
+}
+
+.navbar__link a{
+ 
+  gap: 5px;
+  font-size: 12px;
+}
+
+.navbar img {
+  width: 145px;
+  height: 46px;
+}
+}

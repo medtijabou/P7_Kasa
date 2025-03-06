@@ -1,5 +1,5 @@
 @use '../style/variables' as variables;
-@use '../style/components/responsive';
+@use '../style/components/responsive.scss';
 @use '../style/components/App';
 @use '../style/components/Navbar';
 @use '../style/components/Banner';

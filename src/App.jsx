@@ -1,5 +1,4 @@
-import './style/index.scss'; // Assurez-vous que le chemin est correct
-
+import './style/index.scss'; 
 import Banner from "./components/Banner";  
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";

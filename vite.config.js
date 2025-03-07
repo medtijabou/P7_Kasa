@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/P7_Kasa/',  // Assurez-vous que le chemin de base correspond à votre nom de repository
+  base: '/P7_Kasa/',  // Change ici pour correspondre au nom de ton projet GitHub
 })

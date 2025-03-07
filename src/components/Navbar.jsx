@@ -1,9 +1,11 @@
+// filepath: /home/tijarim7/projet_open_class/projet_7_react/kasa/src/components/Navbar.jsx
 import { NavLink } from "react-router-dom";
+import logoKasa from "../assets/images/logoKasa.png"; // Importez l'image
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <img src="/src/assets/images/logoKasa.png" alt="Kasa" />
+      <img src={logoKasa} alt="Kasa" /> {/* Utilisez la variable importée */}
       <div className="navbar__link">
         {/* Lien pour Accueil avec effet actif */}
         <NavLink

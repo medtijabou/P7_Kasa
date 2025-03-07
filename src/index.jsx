@@ -1,3 +1,4 @@
+// filepath: /home/tijarim7/projet_open_class/projet_7_react/kasa/src/index.jsx
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

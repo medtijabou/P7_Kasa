@@ -1,3 +1,4 @@
+// filepath: /home/tijarim7/projet_open_class/projet_7_react/kasa/src/components/Main.jsx
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../style/index.scss";
@@ -6,10 +7,19 @@ function Main() {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch('./Datas/logements.json')
-      .then((response) => response.json())
-      .then((data) => setLocations(data))
-      .catch((error) => console.error('Erreur lors du chargement du fichier JSON:', error));
+    fetch('/Datas/logements.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        setLocations(data); // Mettez à jour l'état avec les données JSON
+    })
+    .catch(error => {
+        console.error('Erreur lors du chargement du fichier JSON:', error);
+    });
   }, []);
 
   return (
@@ -23,7 +33,6 @@ function Main() {
           
           {/* Titre de la location */}
           <div className="main__title">{location.title}</div>
-
         </div>
       ))}
     </div>
@@ -31,4 +40,3 @@ function Main() {
 }
 
 export default Main;
-

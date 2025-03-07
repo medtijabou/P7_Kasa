@@ -1,14 +1,14 @@
+// filepath: /home/tijarim7/projet_open_class/projet_7_react/kasa/src/components/Detail.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 
 function Detail() {
   const { id } = useParams();
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
- 
+
   useEffect(() => {
-    fetch('./Datas/logements.json')
+    fetch('/Datas/logements.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Fichier JSON non trouvé ou erreur de réseau');
@@ -27,10 +27,14 @@ function Detail() {
         setError(error.message); // Affichez un message d'erreur à l'utilisateur
       });
   }, [id]);
+
   if (error) {
     return <div>Erreur : {error}</div>;
   }
 
+  if (!location) {
+    return <div>Chargement...</div>;
+  }
 
   return (
     <div className="detail__container">

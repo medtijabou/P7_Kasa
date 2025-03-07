@@ -7,7 +7,7 @@ function Main() {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch('/P7_Kasa/Datas/logements.json')
+    fetch('/Datas/logements.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');

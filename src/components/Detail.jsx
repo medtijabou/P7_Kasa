@@ -8,7 +8,7 @@ function Detail() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/P7_Kasa/Datas/logements.json')
+    fetch('/Datas/logements.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Fichier JSON non trouvé ou erreur de réseau');

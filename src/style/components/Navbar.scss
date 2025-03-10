@@ -17,28 +17,28 @@ a img {
   font-size: 24px;
 }
 
-/* Enlever la bordure et le contour sur les liens */
 .navbar__link a,
 .navbar__link .active {
-  text-decoration: none; /* Enlève la décoration de texte (soulignement) */
-  outline: none; /* Enlève le contour autour des liens */
+  text-decoration: none;
+  outline: none;
 }
 
 /* Style du lien actif */
 .navbar__link .active {
-  color: #ff6060; /* Surligne en rouge lorsque l'élément est actif */
-  border-bottom: #ff6060 2px solid; 
-}
- /* Responsive styles for max-width 768px */
- @media (max-width: 768px) {  
-.navbar__link a{
- 
-  gap: 5px;
-  font-size: 12px;
+  color: #ff6060;
+  border-bottom: #ff6060 2px solid;
 }
 
-.navbar img {
-  width: 145px;
-  height: 46px;
-}
+/* Responsive styles for max-width 768px */
+@media (max-width: 768px) {
+  .navbar__link a {
+
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .navbar img {
+    width: 145px;
+    height: 46px;
+  }
 }

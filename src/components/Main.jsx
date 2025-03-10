@@ -1,25 +1,24 @@
-// filepath: /home/tijarim7/projet_open_class/projet_7_react/kasa/src/components/Main.jsx
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../style/index.scss";
 
 function Main() {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch('/Datas/logements.json')
-    .then(response => {
+    fetch("/Datas/logements.json")
+      .then((response) => {
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
-    })
-    .then(data => {
+      })
+      .then((data) => {
         setLocations(data); // Mettez à jour l'état avec les données JSON
-    })
-    .catch(error => {
-        console.error('Erreur lors du chargement du fichier JSON:', error);
-    });
+      })
+      .catch((error) => {
+        console.error("Erreur lors du chargement du fichier JSON:", error);
+      });
   }, []);
 
   return (
@@ -28,9 +27,13 @@ function Main() {
         <div key={index} className="main__box">
           {/* Affichage de l'image de couverture */}
           <Link to={`/detail/${location.id}`}>
-            <img src={location.cover} alt={location.title} className="main__cover" />
+            <img
+              src={location.cover}
+              alt={location.title}
+              className="main__cover"
+            />
           </Link>
-          
+
           {/* Titre de la location */}
           <div className="main__title">{location.title}</div>
         </div>

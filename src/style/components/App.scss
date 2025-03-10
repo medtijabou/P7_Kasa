@@ -32,6 +32,7 @@ section {
 
 a {
   color: variables.$text-color;
+
   &:hover {
     color: variables.$text-hover-color;
   }

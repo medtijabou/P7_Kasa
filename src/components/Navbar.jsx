@@ -1,4 +1,3 @@
-// filepath: /home/tijarim7/projet_open_class/projet_7_react/kasa/src/components/Navbar.jsx
 import { NavLink } from "react-router-dom";
 import logoKasa from "../assets/images/logoKasa.png"; // Importez l'image
 
@@ -10,11 +9,11 @@ function Navbar() {
         {/* Lien pour Accueil avec effet actif */}
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "active" : "")} // Applique la classe "active" quand le lien est actif
+          className={({ isActive }) => (isActive ? "active" : "")}
         >
           <div>Accueil</div>
         </NavLink>
-        
+
         {/* Lien pour À propos avec effet actif */}
         <NavLink
           to="/about"

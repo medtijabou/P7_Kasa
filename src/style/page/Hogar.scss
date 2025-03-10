@@ -1,6 +1,6 @@
 .hogar__container {
   max-width: 1240px;
-  margin: auto; 
+  margin: auto;
 
 
 }
@@ -71,13 +71,13 @@
 }
 
 
-//* Bulles de navigation */
+
 .text__dropdown__container {
   display: flex;
   flex-direction: row;
-  /* Espace entre les éléments, ajustez à votre convenance */
+
   max-width: 1240px;
-  /* Assurez-vous que le conteneur prend toute la largeur disponible */
+
   margin: auto;
   gap: 100px;
 }
@@ -94,17 +94,13 @@
   font-size: 18px;
   font-weight: bold;
   border: none;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   border-radius: 5px;
   transition: background 0.3s ease-in-out;
-
-  /* Assurez-vous que chaque titre prend 50% de la largeur du conteneur */
   flex: 1;
-  /* Prend la moitié de la largeur */
+
 }
 
 .text__icon {
@@ -144,19 +140,15 @@ i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   border-radius: 5px;
   transition: background 0.3s ease-in-out;
-
-  /* Assurez-vous que chaque titre prend 50% de la largeur du conteneur */
   flex: 1;
-  /* Prend la moitié de la largeur */
 }
 
 
 .hogar__container__header {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -164,8 +156,6 @@ flex-direction: column;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
-
   flex-direction: column-reverse;
 }
 
@@ -173,13 +163,12 @@ flex-direction: column;
   display: flex;
   gap: 5px;
   font-size: 24px;
-  color: #e3e3e3; // Couleur des étoiles vides
-
+  color: #e3e3e3;
 }
 
 .star.filled {
 
-  color: rgba(255, 96, 96, 1); // Couleur des étoiles remplies
+  color: rgba(255, 96, 96, 1);
 }
 
 .hogar__host {
@@ -194,10 +183,7 @@ flex-direction: column;
   font-family: Montserrat;
   font-weight: 500;
   font-size: 18px;
-
-
   color: rgba(255, 96, 96, 1);
-
 }
 
 .hogar__host-image {
@@ -206,79 +192,98 @@ flex-direction: column;
   border-radius: 50%;
   object-fit: cover;
 }
-.hogar__card{
+
+.hogar__card {
   flex-direction: column;
 }
-.hogar__filtre{
-flex-direction:column;
+
+.hogar__filtre {
+  flex-direction: column;
   gap: 10px;
 }
 
 /* Responsive */
+
 @media (max-width: 768px) {
-  body{
- 
-    margin:auto;
+  body {
+
+    margin: auto;
     flex-direction: column;
   }
+
   .slick-slide img {
     width: 100%;
     height: 255px;
   }
+
   .hogar__container__header {
     flex-direction: column;
   }
+
   .hogar__title {
     font-size: 18px;
   }
-  .hogar__card{
+
+  .hogar__card {
     display: flex;
     flex-direction: column-reverse;
   }
-  .hogar__filtre{
+
+  .hogar__filtre {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .hogar__location{
-    margin:0
+
+  .hogar__location {
+    margin: 0
   }
+
   .tags__list {
     flex-wrap: nowrap;
   }
+
   .tag {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
   }
+
   .hogar__header {
-   flex-direction: row;
-   align-items: center;
+    flex-direction: row;
+    align-items: center;
   }
+
   .hogar__host {
-margin-top: -15px;
-}
+    margin-top: -15px;
+  }
+
   .hogar__host-image {
     width: 32px;
     height: 32px;
   }
+
   .hogar__host-name {
     font-size: 12px;
   }
+
   .hogar__rating {
     font-size: 18px;
     padding-bottom: 35px;
   }
-  .text__dropdown__container{
+
+  .text__dropdown__container {
     flex-direction: column;
     gap: 0;
-   
+
   }
-  .text__box{
+
+  .text__box {
     width: 100%;
   }
+
   .custom-arrow {
     font-size: 25px;
- }
+  }
 }

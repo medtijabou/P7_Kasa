@@ -24,14 +24,17 @@
   font-size: 24px;
   color: white;
 }
+
 /* Responsive styles for max-width 768px */
 @media (max-width: 768px) {
   .footer_container {
     height: 30vh;
   }
+
   .logo_footer img {
     width: 133px;
   }
+
   .footer__close {
     width: 26%;
     font-size: 12px;

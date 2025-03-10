@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Slider from "react-slick"; // Import du carrousel
+import Slider from "react-slick"; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar } from "react-icons/fa";
 
 import "../style/index.scss";
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import des icônes des flèches
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function Hogar() {
   const { id } = useParams();
   const [location, setLocation] = useState(null);
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false); // État pour la description
-  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false); // État pour les équipements
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false); 
+  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
 
   const toggleDescription = () => {
     setIsDescriptionOpen(!isDescriptionOpen);
@@ -84,7 +84,7 @@ function Hogar() {
           </Slider>
         ) : (
           <img
-            src={location.pictures[0]} // Afficher la seule image
+            src={location.pictures[0]} 
             alt="Photo"
             className="hogar__image"
             loading="lazy"

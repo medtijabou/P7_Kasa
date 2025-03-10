@@ -5,17 +5,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar } from "react-icons/fa";
 
+import "../style/index.scss";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import des icônes des flèches
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
 function Hogar() {
   const { id } = useParams();
   const [location, setLocation] = useState(null);
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);  // État pour la description
-  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);    // État pour les équipements
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false); // État pour la description
+  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false); // État pour les équipements
 
   const toggleDescription = () => {
     setIsDescriptionOpen(!isDescriptionOpen);
@@ -26,8 +26,7 @@ function Hogar() {
   };
 
   useEffect(() => {
-    fetch('/Datas/logements.json')
-
+    fetch("/Datas/logements.json")
       .then((response) => response.json())
       .then((data) => {
         const selectedLocation = data.find((item) => item.id === id);
@@ -66,109 +65,129 @@ function Hogar() {
   };
 
   return (
-    <div className="hogar__container">
+    <div>
+      {" "}
       <Navbar />
-      {location.pictures.length > 1 ? (
-  <Slider {...settings} className="hogar__carousel">
-    {location.pictures.map((pic, index) => (
-      <div key={index}>
-        <img
-          src={pic}
-          alt={`Photo ${index + 1}`}
-          className="hogar__image"
-          loading="lazy"
-        />
-      </div>
-    ))}
-  </Slider>
-) : (
-  <img
-    src={location.pictures[0]} // Afficher la seule image
-    alt="Photo"
-    className="hogar__image"
-    loading="lazy"
-  />
-)}
-
-
-<div className="hogar__container__header">
-      <h1 className="hogar__title">{location.title}</h1>
-      <div className="hogar__header">
-  {/* Section des étoiles */}
-  <div className="hogar__rating">
-    {[...Array(5)].map((_, index) => (
-      <FaStar
-        key={index}
-        className={index < location.rating ? "star filled" : "star"}
-      />
-    ))}
-  </div>
-
-  {/* Section de l'hôte */}
-  <div className="hogar__host">
-    <p className="hogar__host-name">{location.host.name}</p>
-    <img src={location.host.picture} alt={location.host.name} className="hogar__host-image" />
-  </div>
-</div>
-</div>
-
-      <p className="hogar__location">{location.location}</p>
-      <div className="hogar__tags">
-        {location.tags && location.tags.length > 0 && (
-          <div className="tags__list">
-            {location.tags.map((tag, index) => (
-              <span key={index} className="tag">
-                {tag}
-              </span>
+      <div className="hogar__container">
+        {location.pictures.length > 1 ? (
+          <Slider {...settings} className="hogar__carousel">
+            {location.pictures.map((pic, index) => (
+              <div key={index}>
+                <img
+                  src={pic}
+                  alt={`Photo ${index + 1}`}
+                  className="hogar__image"
+                  loading="lazy"
+                />
+              </div>
             ))}
-          </div>
+          </Slider>
+        ) : (
+          <img
+            src={location.pictures[0]} // Afficher la seule image
+            alt="Photo"
+            className="hogar__image"
+            loading="lazy"
+          />
         )}
-      </div>
 
-      <div className="text__dropdown__container">
-        {/* Section Description */}
-        <div className="text__box">
-          <div className="text__dropdown__title">
-            <h2>Description</h2>
-            <span className={`text__icon ${isDescriptionOpen ? "open" : ""}`}>
-              <i
-                className={`fa-solid ${isDescriptionOpen ? "fa-chevron-up" : "fa-chevron-down"}`}
-                onClick={toggleDescription}
-                aria-expanded={isDescriptionOpen ? "true" : "false"}
-              ></i>
-            </span>
+        <div className="hogar__container__header">
+          <h1 className="hogar__title">{location.title}</h1>
+          <div className="hogar__card">
+            <div className="hogar__header">
+              {/* Section des étoiles */}
+              <div className="hogar__rating">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar
+                    key={index}
+                    className={index < location.rating ? "star filled" : "star"}
+                  />
+                ))}
+              </div>
+
+              {/* Section de l'hôte */}
+              <div className="hogar__host">
+                <p className="hogar__host-name">{location.host.name}</p>
+                <img
+                  src={location.host.picture}
+                  alt={location.host.name}
+                  className="hogar__host-image"
+                />
+              </div>
+            </div>
+
+            <div className="hogar__filtre">
+              <p className="hogar__location">{location.location}</p>
+              <div className="hogar__tags">
+                {location.tags && location.tags.length > 0 && (
+                  <div className="tags__list">
+                    {location.tags.map((tag, index) => (
+                      <span key={index} className="tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-          <div className={`text__dropdown__content ${isDescriptionOpen ? "open" : ""}`}>
-            <p>{location.description}</p>
+        </div>
+        <div className="text__dropdown__container">
+          {/* Section Description */}
+          <div className="text__box">
+            <div className="text__dropdown__title">
+              <h2>Description</h2>
+              <span className={`text__icon ${isDescriptionOpen ? "open" : ""}`}>
+                <i
+                  className={`fa-solid ${
+                    isDescriptionOpen ? "fa-chevron-up" : "fa-chevron-down"
+                  }`}
+                  onClick={toggleDescription}
+                  aria-expanded={isDescriptionOpen ? "true" : "false"}
+                ></i>
+              </span>
+            </div>
+            <div
+              className={`text__dropdown__content ${
+                isDescriptionOpen ? "open" : ""
+              }`}
+            >
+              <p>{location.description}</p>
+            </div>
+          </div>
+
+          {/* Section Equipments */}
+          <div className="text__box">
+            <div className="text__dropdown__picto">
+              <h2>Equipments</h2>
+              <span className={`text__icon ${isEquipmentsOpen ? "open" : ""}`}>
+                <i
+                  className={`fa-solid ${
+                    isEquipmentsOpen ? "fa-chevron-up" : "fa-chevron-down"
+                  }`}
+                  onClick={toggleEquipments}
+                  aria-expanded={isEquipmentsOpen ? "true" : "false"}
+                ></i>
+              </span>
+            </div>
+            <div
+              className={`text__dropdown__content ${
+                isEquipmentsOpen ? "open" : ""
+              }`}
+            >
+              <ul>
+                {location.equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* Section Equipments */}
-        <div className="text__box">
-          <div className="text__dropdown__picto">
-            <h2>Equipments</h2>
-            <span className={`text__icon ${isEquipmentsOpen ? "open" : ""}`}>
-              <i
-                className={`fa-solid ${isEquipmentsOpen ? "fa-chevron-up" : "fa-chevron-down"}`}
-                onClick={toggleEquipments}
-                aria-expanded={isEquipmentsOpen ? "true" : "false"}
-              ></i>
-            </span>
-          </div>
-          <div className={`text__dropdown__content ${isEquipmentsOpen ? "open" : ""}`}>
-            <ul>
-              {location.equipments.map((equipment, index) => (
-                <li key={index}>{equipment}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <Footer />
       </div>
-
-      <Footer />
     </div>
   );
 }
 
 export default Hogar;
-  

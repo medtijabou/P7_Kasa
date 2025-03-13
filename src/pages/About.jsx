@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import Collapse from "./Collapse";
+import Collapse from "../components/Collapse";
 function About() {
   const [collapsesData, setCollapsesData] = useState([]);
 

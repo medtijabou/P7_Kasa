@@ -1,0 +1,57 @@
+.descriptionAccommodation {
+    margin: 0 auto 30px auto;
+    height: 415px;
+    width: 100%;
+    max-width: 1240px;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        border-radius: 35px;
+        width: 100%;
+        height: 100%;
+    }
+    & .imageAccommodation {
+        width: 100%;
+        height: 415px;
+        object-fit: cover;
+        border-radius: 35px;
+    }
+    & div {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        top: -260px;
+        z-index: 1;
+        & p {
+            color: white;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -125px;
+        }
+        & img {
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .descriptionAccommodation {
+        height: 255px;
+        & .imageAccommodation {
+            height: 255px;
+        }
+        & div {
+            top: -140px;
+            & p {
+                bottom: -100px;
+            }
+            & img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

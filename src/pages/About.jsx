@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+
 import Collapse from "./Collapse";
 function About() {
   const [collapsesData, setCollapsesData] = useState([]);
@@ -16,8 +15,8 @@ function About() {
   }, []);
 
   return (
-    <div>
-      <Navbar />
+    <main>
+
       <div className="about">{/* Contenu de la page */}</div>
       <div className="collapse__container">
         {collapsesData.map((collapse) => (
@@ -28,8 +27,8 @@ function About() {
           />
         ))}
       </div>
-      <Footer />
-    </div>
+
+    </main>
   );
 }
 

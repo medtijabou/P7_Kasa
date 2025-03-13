@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Slider from "react-slick"; 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { FaStar } from "react-icons/fa";
 
-import "../style/index.scss";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Slideshow from "../components/Slideshow";
 
 function Hogar() {
   const { id } = useParams();
   const [location, setLocation] = useState(null);
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false); 
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
 
   const toggleDescription = () => {
@@ -41,55 +36,10 @@ function Hogar() {
     return <p>Chargement...</p>;
   }
 
-  const PrevArrow = ({ onClick }) => (
-    <div className="custom-arrow custom-prev" onClick={onClick}>
-      <FaChevronLeft />
-    </div>
-  );
-
-  const NextArrow = ({ onClick }) => (
-    <div className="custom-arrow custom-next" onClick={onClick}>
-      <FaChevronRight />
-    </div>
-  );
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-  };
-
   return (
     <div>
-      {" "}
-      <Navbar />
       <div className="hogar__container">
-        {location.pictures.length > 1 ? (
-          <Slider {...settings} className="hogar__carousel">
-            {location.pictures.map((pic, index) => (
-              <div key={index}>
-                <img
-                  src={pic}
-                  alt={`Photo ${index + 1}`}
-                  className="hogar__image"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </Slider>
-        ) : (
-          <img
-            src={location.pictures[0]} 
-            alt="Photo"
-            className="hogar__image"
-            loading="lazy"
-          />
-        )}
+        <Slideshow imagesList={location.pictures} />
 
         <div className="hogar__container__header">
           <h1 className="hogar__title">{location.title}</h1>
@@ -183,8 +133,6 @@ function Hogar() {
             </div>
           </div>
         </div>
-
-        <Footer />
       </div>
     </div>
   );

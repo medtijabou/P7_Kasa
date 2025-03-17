@@ -4,10 +4,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.navbar img{
+  margin-left: -15px;
+}
 
 a img {
   width: 210px;
   height: 68px;
+
 }
 
 .navbar__link {
@@ -40,5 +44,6 @@ a img {
   .navbar img {
     width: 145px;
     height: 46px;
+    margin-left: -9px;
   }
 }

@@ -44,11 +44,11 @@ function Hogar() {
   }
 
   return (
-    <div>
-      <div className="hogar__container">
+    <main>
+      <section className="hogar__container">
         <Slideshow imagesList={location.pictures} />
 
-        <div className="hogar__container__header">
+        <article className="hogar__container__header">
           <h1 className="hogar__title">{location.title}</h1>
           <div className="hogar__card">
             <div className="hogar__header">
@@ -86,8 +86,8 @@ function Hogar() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="text__dropdown__container">
+        </article>
+        <article className="text__dropdown__container">
           <div className="text__box">
             <div className="text__dropdown__title">
               <h2>Description</h2>
@@ -135,9 +135,9 @@ function Hogar() {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </main>
   );
 }
 

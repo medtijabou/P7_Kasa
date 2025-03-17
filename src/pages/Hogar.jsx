@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";  // Ajout de useNavigate pour la redirection
 import { FaStar } from "react-icons/fa";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -11,6 +11,7 @@ function Hogar() {
   const [location, setLocation] = useState(null);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
+  const navigate = useNavigate(); // Initialisation du hook useNavigate
 
   const toggleDescription = () => {
     setIsDescriptionOpen(!isDescriptionOpen);
@@ -25,12 +26,18 @@ function Hogar() {
       .then((response) => response.json())
       .then((data) => {
         const selectedLocation = data.find((item) => item.id === id);
-        setLocation(selectedLocation);
+        if (!selectedLocation) {
+          // Si aucun logement trouvé, rediriger vers la page d'erreur
+          navigate("/error");
+        } else {
+          setLocation(selectedLocation);
+        }
       })
-      .catch((error) =>
-        console.error("Erreur lors du chargement du fichier JSON:", error)
-      );
-  }, [id]);
+      .catch((error) => {
+        console.error("Erreur lors du chargement du fichier JSON:", error);
+        navigate("/error");  // Redirection vers la page d'erreur en cas d'erreur de fetch
+      });
+  }, [id, navigate]);
 
   if (!location) {
     return <p>Chargement...</p>;
@@ -45,7 +52,6 @@ function Hogar() {
           <h1 className="hogar__title">{location.title}</h1>
           <div className="hogar__card">
             <div className="hogar__header">
-              {/* Section des étoiles */}
               <div className="hogar__rating">
                 {[...Array(5)].map((_, index) => (
                   <FaStar
@@ -55,7 +61,6 @@ function Hogar() {
                 ))}
               </div>
 
-              {/* Section de l'hôte */}
               <div className="hogar__host">
                 <p className="hogar__host-name">{location.host.name}</p>
                 <img
@@ -83,7 +88,6 @@ function Hogar() {
           </div>
         </div>
         <div className="text__dropdown__container">
-          {/* Section Description */}
           <div className="text__box">
             <div className="text__dropdown__title">
               <h2>Description</h2>
@@ -106,7 +110,6 @@ function Hogar() {
             </div>
           </div>
 
-          {/* Section Equipments */}
           <div className="text__box">
             <div className="text__dropdown__picto">
               <h2>Equipments</h2>

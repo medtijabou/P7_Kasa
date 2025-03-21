@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import { useState } from "react"; // Ajout de useState
-import arrowLeft from "../assets/images/arrow_left.png";
-import arrowRight from "../assets/images/arrow_right.png";
+import { useState, useEffect } from "react"; // Ajout de useState et useEffect
+import arrowLeft from "../assets/images/arrow_left.png"; // Image pour le bouton précédent
+import arrowRight from "../assets/images/arrow_right.png"; // Image pour le bouton suivant
+
 
 export default function Slideshow({ imagesList }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,21 +19,32 @@ export default function Slideshow({ imagesList }) {
       currentIndex === imagesList.length - 1 ? 0 : currentIndex + 1
     );
   };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setCurrentIndex(currentIndex === imagesList.length - 1 ? 0 : currentIndex + 1);
+    }, 2000); // Chaque image change après 2 secondes
+  
+    return () => clearTimeout(timeout);
+  },);
+  
 
-  return (
-    <div className="descriptionAccommodation">
-      <img src={currentImage} alt="Logement" className="imageAccommodation" />
-      {imagesList.length === 1 ? null : (
-        <div>
-          <img onClick={slideLeft} src={arrowLeft} alt="Précédente" className="slide__left" />
-          <p>
-            {currentIndex + 1}/{imagesList.length}
-          </p>
-          <img onClick={slideRight} src={arrowRight} alt="Suivante" className="slide__right" />
-        </div>
-      )}
-    </div>
-  );
+
+    return (
+      <div className="descriptionAccommodation">
+        <img src={currentImage} alt="Logement" className="imageAccommodation" />
+        {imagesList.length === 1 ? null : (
+          <div>
+            <img onClick={slideLeft} src={arrowLeft} alt="Précédente" className="slide__left" />
+            <p>
+              {currentIndex + 1}/{imagesList.length}
+            </p>
+            <img onClick={slideRight} src={arrowRight} alt="Suivante" className="slide__right" />
+          </div>
+        )}
+      </div>
+    );
+    
+
 }
 
 Slideshow.propTypes = {

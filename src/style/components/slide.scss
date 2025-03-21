@@ -35,7 +35,19 @@
             cursor: pointer;
         }
     }
+    .slide__left,
+    .slide__right {
+      
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.3s ease; // Effet de survol
+    }
+    .slide__left:hover,
+    .slide__right:hover {
+        opacity: 1; // Augmenter l'opacité au survol
+    }
 }
+
 
 @media screen and (max-width: 800px) {
     .descriptionAccommodation {

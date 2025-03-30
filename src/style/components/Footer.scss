@@ -1,6 +1,8 @@
 @use '../variables' as variables;
 
 .footer_container {
+max-width: 1440px;
+  margin: 0;
   height: 20vh;
   background-color: black;
   margin-top: 20px;

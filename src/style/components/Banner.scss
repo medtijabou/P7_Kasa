@@ -2,6 +2,8 @@
 
 /* Banner */
 .banner {
+  max-width: variables.$max-width;
+  margin: auto;
   display: flex;
   justify-content: center;
   padding-top: 25px;

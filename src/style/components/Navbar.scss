@@ -1,5 +1,8 @@
 /* Navbar */
+@use '../variables' as variables;
 .navbar {
+  max-width: variables.$max-width;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;

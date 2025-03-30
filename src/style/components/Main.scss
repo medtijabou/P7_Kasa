@@ -1,21 +1,23 @@
 /* Main.scss */
+@use '../variables' as variables;
 .main__container {
-
+  max-width: variables.$max-width;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
 
+  margin:20px auto;
   border-radius: 25px;
   background: rgba(246, 246, 246, 1);
   animation: fadeInUp 0.5s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
 
+  padding: 20px;
 
 }
 
-.main__container>* {
-  flex: 1 1 calc(25.33%);
-  padding: 30px;
-}
+
 
 .main__box img {
   width: 100%;
@@ -39,13 +41,15 @@
 
 .main__title {
   position: absolute;
-  bottom: 60px;
+
+  bottom: 50px;
 
   color: white;
   font-family: Montserrat;
   font-weight: 700;
   font-size: 18px;
-  margin: 15px 20px;
+  padding-left: 10px;
+ 
 
 
 }

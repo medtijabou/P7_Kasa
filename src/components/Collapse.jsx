@@ -1,33 +1,39 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import arrow_up from "../assets/images/arrow_up.png";
+import arrow_down from "../assets/images/arrow_down.png";
 
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-
-const Collapse = ({ title, content }) => {
+export default function Collapse({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef(null);
 
-  const display = () => {
+  const handleToggleCollapse = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <div className="collapse__dropdown__container">
-      <div className="collapse__dropdown__title">
-        <h2>{title}</h2>
-        <span className={`collapse__icon ${isOpen ? "open" : ""}`}>
-          <i
-            className={`fa-solid ${
-              isOpen ? "fa-chevron-up" : "fa-chevron-down"
-            }`}
-            onClick={display}
-          ></i>
-        </span>
+      <div className={`collapse ${isOpen ? "open" : ""}`}>
+        <p>{title}</p>
+        <img
+          onClick={handleToggleCollapse} // ✅ Click uniquement ici
+          className={`collapse__arrow ${isOpen ? "arrow_down" : "arrow_up"}`}
+          src={isOpen ? arrow_down : arrow_up}
+          alt={isOpen ? "fermer" : "ouvrir"}
+        />
       </div>
-      <div className={`collapse__dropdown__content ${isOpen ? "open" : ""}`}>
-        <p>{content}</p>
-      </div>
+      {isOpen && (
+        <div ref={contentRef} className={`collapsible-content ${isOpen ? "open" : ""}`}>
+          {Array.isArray(content) ? (
+            <ul>
+              {content.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>{content}</p>
+          )}
+        </div>
+      )}
     </div>
   );
-};
-
-export default Collapse;
+}

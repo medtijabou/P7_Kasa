@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
+import starColor from "../assets/images/star_color.png";
+import starGrey from "../assets/images/star_grey.png";
+
 import Collapse from "../components/Collapse";
-
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import Slideshow from "../components/Slideshow";
-
 
 
 function Hogar() {
@@ -34,6 +33,16 @@ function Hogar() {
     return <div className="loading">Chargement...</div>;
   }
 
+  // Récupération de la note et génération des étoiles
+  const ratingNumber = parseInt(location.rating, 10); 
+  const stars = Array.from({ length: 5 }, (_, index) => (
+    <img
+      key={index}
+      src={index < ratingNumber ? starColor : starGrey}
+      alt={index < ratingNumber ? "star" : "empty-star"}
+    />
+  ));
+
   return (
     <main>
       <section className="hogar__container">
@@ -43,12 +52,7 @@ function Hogar() {
           <div className="hogar__card">
             <div className="hogar__header">
               <div className="hogar__rating">
-                {[...Array(5)].map((_, index) => (
-                  <FaStar
-                    key={index}
-                    className={index < location.rating ? "star filled" : "star"}
-                  />
-                ))}
+                {stars} {/* Affichage des étoiles */}
               </div>
               <div className="hogar__host">
                 <p className="hogar__host-name">{location.host.name}</p>

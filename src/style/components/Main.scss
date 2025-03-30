@@ -72,6 +72,8 @@
   .main__container {
     flex-direction: column;
     background: none;
+    display: flex;
+    padding: 0;
   }
 
   .main__container>* {

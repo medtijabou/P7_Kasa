@@ -19,13 +19,14 @@ export default function Slideshow({ imagesList }) {
       currentIndex === imagesList.length - 1 ? 0 : currentIndex + 1
     );
   };
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setCurrentIndex(currentIndex === imagesList.length - 1 ? 0 : currentIndex + 1);
-    }, 2000); // Chaque image change après 2 secondes
+  //Animation slides
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setCurrentIndex(currentIndex === imagesList.length - 1 ? 0 : currentIndex + 1);
+  //   }, 3000); // Chaque image change après 2 secondes
   
-    return () => clearTimeout(timeout);
-  },);
+  //   return () => clearTimeout(timeout);
+  // },);
   
 
 

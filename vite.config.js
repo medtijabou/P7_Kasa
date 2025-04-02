@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base:"https://medtijabou.github.io/P7_Kasa/",
   server: {
     historyApiFallback: true,
   },

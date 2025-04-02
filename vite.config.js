@@ -1,11 +1,11 @@
-// filepath: /home/tijarim7/projet_open_class/projet_7_react/kasa/vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base:"/P7_Kasa",
+  base: "/P7_Kasa/",  // Assure-toi que ce chemin est correct
   plugins: [react()],
   server: {
-    historyApiFallback: true,
+    host: true, // Permet l'accès via IP locale
+    port: 3000  // Change si besoin
   },
 });

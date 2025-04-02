@@ -26,7 +26,7 @@ export default function Collapse({ title, content }) {
           {Array.isArray(content) ? (
             <ul>
               {content.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>{item}</li>  // Assurez-vous que chaque <li> est directement dans <ul>
               ))}
             </ul>
           ) : (

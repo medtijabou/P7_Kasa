@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export default function Card({ location, className }) {
+export default function Card({ location, className = '' }) {  // Définir className avec une valeur par défaut ici
   return (
     <div className={`main__box ${className}`}> 
       <Link to={`/detail/${location.id}`}>
@@ -24,8 +24,4 @@ Card.propTypes = {
     title: PropTypes.string.isRequired,
   }).isRequired,
   className: PropTypes.string,
-};
-
-Card.defaultProps = {
-  className: '', 
 };

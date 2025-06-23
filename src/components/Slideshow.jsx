@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState} from "react"; // Ajout de useState et useEffect
-import arrowLeft from "../assets/images/arrow_left.png"; // Image pour le bouton précédent
-import arrowRight from "../assets/images/arrow_right.png"; // Image pour le bouton suivant
+import arrowLeft from "/assets/images/arrow_left.png"; // Image pour le bouton précédent
+import arrowRight from "/assets/images/arrow_right.png"; // Image pour le bouton suivant
 // import { useEffect } from "react";
 
 export default function Slideshow({ imagesList }) {

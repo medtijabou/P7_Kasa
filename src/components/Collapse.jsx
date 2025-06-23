@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import arrow_up from "../assets/images/arrow_up.png";
-import arrow_down from "../assets/images/arrow_down.png";
+import arrow_up from "/assets/images/arrow_up.png";
+import arrow_down from "/assets/images/arrow_down.png";
 
 export default function Collapse({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);

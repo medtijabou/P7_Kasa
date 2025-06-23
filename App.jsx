@@ -1,16 +1,14 @@
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./src/pages/Home.jsx";
 import About from "./src/pages/About.jsx";
 import Hogar from "./src/pages/Hogar.jsx";
 import Error from "./src/pages/Error.jsx";
 import Header from "./src/components/Header.jsx";
-
 import Footer from "./src/components/Footer.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,8 +17,8 @@ function App() {
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 
-export default App; 
+export default App;

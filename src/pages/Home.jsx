@@ -5,22 +5,23 @@ import Card from "../components/Card"; // Assure-toi d'importer le composant Car
 
 function Main() {
   const [locations, setLocations] = useState([]);
+useEffect(() => {
+  fetch(`${import.meta.env.BASE_URL}Datas/logements.json`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      setLocations(data);
+    })
+    .catch((error) => {
+      console.error("Erreur lors du chargement du fichier JSON:", error);
+    });
+}, []);
 
-  useEffect(() => {
-    fetch("/Datas/logements.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setLocations(data); // Mettez à jour l'état avec les données JSON
-      })
-      .catch((error) => {
-        console.error("Erreur lors du chargement du fichier JSON:", error);
-      });
-  }, []);
+  
 
   return (
     <main>

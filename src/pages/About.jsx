@@ -6,7 +6,7 @@ function About() {
 
   useEffect(() => {
     // Charger le fichier JSON depuis le dossier public
-    fetch("./Datas/collapses.json")
+    fetch(`${import.meta.env.BASE_URL}Datas/collapses.json`)
       .then((response) => response.json())
       .then((data) => setCollapsesData(data))
       .catch((error) =>

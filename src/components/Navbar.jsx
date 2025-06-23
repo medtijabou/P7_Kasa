@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logoKasa from "../assets/images/logoKasa.png"; // Importez l'image
+import logoKasa from "/assets/images/logoKasa.png"; // Importez l'image
 
 function Navbar() {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import starColor from "../assets/images/star_color.png";
-import starGrey from "../assets/images/star_grey.png";
+import starColor from "/assets/images/star_color.png";
+import starGrey from "/assets/images/star_grey.png";
 
 import Collapse from "../components/Collapse";
 import Slideshow from "../components/Slideshow";
@@ -13,7 +13,8 @@ function Hogar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/Datas/logements.json")
+   fetch(`${import.meta.env.BASE_URL}Datas/logements.json`)
+
       .then((response) => response.json())
       .then((data) => {
         const selectedLocation = data.find((item) => item.id === id);

@@ -7,8 +7,6 @@
   align-items: center;
   margin: 0 auto;
   padding: 20px;
-
-
 }
 
 .collapse__dropdown__container {
@@ -33,36 +31,36 @@
   cursor: pointer;
 }
 
-
-
+/* Flèche avec transition fluide */
 .collapse__arrow {
   width: 24px;
   height: 24px;
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.4s ease-in-out; /* transition fluide */
   cursor: pointer;
+  display: inline-block;
 }
 
+/* Flèche pointant vers le bas par défaut */
+.collapse__arrow.arrow_down {
+  transform: rotate(0deg);
+}
 
-.collapse__arrow.arrow_up {
+/* Flèche pointant vers le haut quand ouvert */
+.collapse.open .collapse__arrow.arrow_down {
   transform: rotate(-180deg);
 }
 
-
-.collapse.open .collapse__arrow.arrow_down{
-  transform: rotate(180deg); 
-}
 
 .collapsible-content {
   background-color: white;
   padding: 0 15px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 3s ease-in-out, padding 3s ease-in-out;
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
 
-
 .collapsible-content.open {
-  max-height: 150px;
+  max-height: 150px; /* Ajuste la hauteur max si besoin */
   padding: 10px 15px;
 }
 
@@ -70,20 +68,20 @@ i {
   font-size: 18px;
   cursor: pointer;
 }
-.hogar__details{
-  display: flex;
-max-width: 1240px;
-margin:auto;
-gap: 80px;
-}
-.hogar__details .collapse__dropdown__container{
-margin: 0;
-   padding-right: 30px;
-  
-  }
-  
 
-/* ✅ Responsive styles pour écrans de max 768px */
+.hogar__details {
+  display: flex;
+  max-width: 1240px;
+  margin: auto;
+  gap: 80px;
+}
+
+.hogar__details .collapse__dropdown__container {
+  margin: 0;
+  padding-right: 30px;
+}
+
+/* Responsive pour écrans max 768px */
 @media (max-width: 768px) {
   .collapse__container {
     width: 100%;
@@ -91,15 +89,12 @@ margin: 0;
   }
   .collapse__dropdown__container {
     width: 100%;
-}
-.hogar__details{
-  flex-direction: column;
-  gap: 15px;
-  
-}
-.hogar__details .collapse__dropdown__container{
- width: auto;
-    
-    }
-    
+  }
+  .hogar__details {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hogar__details .collapse__dropdown__container {
+    width: auto;
+  }
 }
